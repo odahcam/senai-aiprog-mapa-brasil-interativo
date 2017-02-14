@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mapa do Brasil</title>
+<link href="estilo/estilo.css" rel="stylesheet" type="text/css" />
+<link href="http://img849.imageshack.us/img849/8418/mapa3db.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+// Create two variable with the names of the months and days in an array
+var monthNames = [ "de Janeiro de", "de Fevereiro de", "de Março de", "de Abril de", "de Maio de", "de Junho de", "de Julho de", "de Agosto de", "de Setembro de", "de Outubro de", "de Novembro de", "de Dezembro de" ]; 
+var dayNames= ["Dom.","Seg.","Ter.","Qua.","Qui.","Sex.","Sáb."]
+
+// Create a newDate() object
+var newDate = new Date();
+// Extract the current date from Date object
+newDate.setDate(newDate.getDate());
+// Output the day, date, month and year   
+$('#data').html(dayNames[newDate.getDay()] + " " + newDate.getDate() + ' ' + monthNames[newDate.getMonth()] + ' ' + newDate.getFullYear());
+
+setInterval( function() {
+	// Create a newDate() object and extract the seconds of the current time on the visitor's
+	var seconds = new Date().getSeconds();
+	// Add a leading zero to seconds value
+	$("#sec").html(( seconds < 10 ? "0" : "" ) + seconds);
+	},1000);
+	
+setInterval( function() {
+	// Create a newDate() object and extract the minutes of the current time on the visitor's
+	var minutes = new Date().getMinutes();
+	// Add a leading zero to the minutes value
+	$("#min").html(( minutes < 10 ? "0" : "" ) + minutes);
+    },1000);
+	
+setInterval( function() {
+	// Create a newDate() object and extract the hours of the current time on the visitor's
+	var hours = new Date().getHours();
+	// Add a leading zero to the hours value
+	$("#hours").html(( hours < 10 ? "0" : "" ) + hours);
+    }, 1000);	
+});
+</script>
+
+<body>
+
+<div id="topo">
+	Bem Vindos! Site desenvolvido por Luiz Filipe Machado.<br />
+    Passe o mouse pelo mapa e clique em algum estado para saber mais sobre ele.
+</div>
+
+<div id="container">
+	
+    <div id="mapa">    
+        
+        <img src="img/mapa.png" alt="Mapa do Brasil" name="br" width="704" height="692" usemap="#br" border="0" />
+        
+        <map name="br" id="br">
+          <area shape="poly" coords="360,686,365,686,376,666,379,651,386,645,397,630,405,632,399,647,406,644,409,623,414,617,407,612,413,602,401,597,384,581,355,578,334,592,324,603,316,610,312,620,300,629,309,629,322,639,324,645,331,642,347,656,348,660,352,660,365,673" href="rs.html" alt="Rio Grande do Sul" onmouseover="document.br.src='img/estados/rs.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="417,612,430,602,439,579,432,570,433,557,423,563,417,559,409,558,398,563,395,569,361,562,356,575,379,576,385,579,396,588,403,595,416,598,412,610" href="sc.html" alt="Santa Catarina" onmouseover="document.br.src='img/estados/sc.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="359,558,353,545,346,545,350,527,352,514,365,497,382,497,384,499,392,499,400,503,416,502,419,504,420,517,428,527,426,534,436,537,440,543,434,547,433,553,423,558,415,555,408,554,403,557,396,560,392,566" href="pr.html" alt="Paraná" onmouseover="document.br.src='img/estados/pr.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="444,541,475,517,484,517,492,512,499,510,499,504,505,503,504,499,501,500,500,498,493,500,483,500,479,504,469,495,469,485,472,477,463,478,459,455,449,454,443,452,437,456,429,458,426,449,409,447,405,453,396,457,392,466,383,479,383,487,377,491,385,496,391,494,400,500,415,499,421,503,425,517,432,525,431,531,439,533" href="sp.html" alt="São Paulo" onmouseover="document.br.src='img/estados/sp.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="511,502,512,498,507,494,541,485,550,473,554,478,561,478,563,486,552,493,542,503,537,506,531,499,521,504" href="rj.html" alt="Rio de Janeiro" onmouseover="document.br.src='img/estados/rj.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="480,499,473,492,477,473,466,473,465,454,442,449,431,453,431,445,410,443,405,445,405,440,414,428,431,427,435,422,447,424,458,423,465,418,465,411,465,404,468,397,464,389,465,382,474,380,475,365,482,360,489,367,509,355,517,352,520,352,521,358,524,361,529,362,533,362,537,359,547,368,558,370,561,374,565,379,569,383,577,383,585,384,589,388,584,395,574,400,578,414,571,422,567,422,569,431,562,433,565,443,559,456,549,457,549,468,540,482,493,496" href="mg.html" alt="Minas Gerais" onmouseover="document.br.src='img/estados/mg.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="564,475,558,475,554,470,554,460,563,461,565,453,570,444,569,437,570,434,573,436,575,432,571,428,571,426,577,425,578,420,583,419,588,426,585,444" href="rj.html" alt="Espírito Ssnto" onmouseover="document.br.src='img/estados/es.png'" onmouseout="document.br.src='img/mapa.png'"/>
+          <area shape="poly" coords="589,423,604,384,604,367,603,352,605,338,610,326,619,328,631,310,625,304,622,296,619,291,630,287,623,267,616,259,604,254,584,268,575,256,551,270,531,264,531,282,509,293,504,291,497,283,492,285,485,292,485,298,491,305,485,313,489,324,489,336,484,339,490,348,493,355,490,361,512,348,519,347,525,350,527,357,537,355,550,363,561,366,568,374,570,378,586,379,592,384,592,392,577,403" href="ba.html" alt="Bahia" onmouseover="document.br.src='img/estados/ba.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="633,307,628,302,629,298,624,293,634,291,631,273,653,285,642,295" href="se.html" alt="Sergipe" onmouseover="document.br.src='img/estados/se.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="656,283,629,269,634,263,648,269,661,264,674,264" href="al.html" alt="Alagoas" onmouseover="document.br.src='img/estados/al.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="625,262,634,258,647,265,660,259,675,260,681,252,681,240,667,243,656,244,650,251,641,244,643,234,627,240,615,239,612,241,604,234,588,230,586,232,591,241,579,252,584,262,604,249,618,256" href="pe.html" alt="Pernambuco" onmouseover="document.br.src='img/estados/pe.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="650,246,645,244,648,232,639,231,628,237,619,237,623,232,622,216,632,218,643,212,641,219,651,228,664,219,670,218,680,222,681,236,665,239,656,240" href="pb.html" alt="Paraíba" onmouseover="document.br.src='img/estados/pb.png'" onmouseout="document.br.src='img/mapa.png'"/>
+          <area shape="poly" coords="651,224,644,220,648,212,646,205,636,211,632,214,625,212,642,188,650,198,672,198,679,215,676,217,671,213,665,214" href="rn.html" alt="Rio Grande do Norte" onmouseover="document.br.src='img/estados/rn.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="611,235,619,231,617,227,617,212,624,207,638,185,600,155,579,152,576,156,581,170,580,187,583,212,590,218,590,227,604,230" href="ce.html" alt="Ceará" onmouseover="document.br.src='img/estados/ce.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="494,279,499,279,506,288,525,280,527,262,531,261,551,265,587,243,580,234,587,226,588,219,580,213,576,187,578,175,573,161,574,152,565,151,557,160,551,162,548,174,549,184,549,193,544,201,549,206,549,213,544,219,528,218,504,234,492,252" href="pi.html" alt="Piauí" onmouseover="document.br.src='img/estados/pi.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="489,279,492,268,490,251,501,230,528,215,543,215,546,214,546,207,539,200,547,191,544,169,550,158,556,158,561,151,543,141,528,148,524,145,518,153,512,132,514,127,510,125,501,130,499,122,496,119,491,132,484,141,483,148,479,159,454,183,466,191,469,196,468,208,467,218,464,224,471,233,487,235,485,241,477,257" href="ma.html" alt="Maranhão" onmouseover="document.br.src='img/estados/ma.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="295,411,314,397,337,403,358,399,364,410,365,400,377,375,387,374,390,360,402,357,403,338,409,328,409,283,415,270,307,265,288,247,281,231,279,251,227,252,228,269,225,277,230,286,252,291,253,295,250,303,255,312,241,335,248,358,245,365,251,368,251,382,281,382,282,399,289,401" href="mt.html" alt="Mato Grosso" onmouseover="document.br.src='img/estados/mt.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="373,423,376,416,367,415,368,410,368,401,380,379,390,379,392,363,406,359,408,337,416,325,418,331,427,337,430,337,438,333,454,348,456,348,464,342,480,341,489,353,485,358,469,352,440,354,436,370,453,382,463,379,462,384,461,389,464,397,460,403,463,412,459,419,441,420,435,417,429,423,413,424,402,437,390,430" href="go.html" alt="Goiás" onmouseover="document.br.src='img/estados/go.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="483,360,475,354,460,353,450,353,440,354,437,369,443,377,455,382,465,381,473,380,475,366" href="df.html" alt="Distrito Federal - Brasília" onmouseover="document.br.src='img/estados/df.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="332,518,341,514,347,515,352,508,358,502,361,494,378,488,380,477,393,455,401,450,398,437,369,427,371,420,364,418,359,411,357,403,336,407,324,401,310,401,295,418,290,445,284,453,293,462,291,484,304,488,311,485,317,486,325,489,328,498" href="ms.html" alt="Mato Grosso do Sul" onmouseover="document.br.src='img/estados/ms.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="412,325,418,320,421,323,422,329,429,334,436,330,441,330,454,343,463,339,480,338,485,333,486,328,486,321,483,316,481,312,486,304,480,297,480,291,486,283,486,281,473,258,473,253,481,239,471,237,460,225,464,215,465,194,452,187,448,188,453,191,457,192,451,204,439,215,437,223,439,232,439,239,432,247,425,254,421,267,414,279,412,289" href="to.html" alt="Tocantins" onmouseover="document.br.src='img/estados/to.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="238,334,220,336,212,327,188,317,181,316,163,306,161,291,156,285,160,277,161,271,157,268,150,272,141,272,136,275,132,272,139,267,152,266,159,265,164,259,178,255,180,245,187,239,202,240,223,253,225,267,221,276,227,289,248,296,246,300,251,312" href="ro.html" alt="Rondônia" onmouseover="document.br.src='img/estados/ro.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="105,287,105,293,101,296,77,294,71,297,68,296,69,269,67,267,52,279,40,280,35,270,28,270,29,266,10,241,14,238,14,235,63,247,129,276,126,279,117,289" href="ac.html" alt="Acre" onmouseover="document.br.src='img/estados/ac.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="204,107,207,103,205,77,191,53,179,50,173,31,165,26,172,25,176,30,189,31,195,41,200,27,232,15,238,7,243,5,242,14,252,25,243,47,264,76,265,87,249,88,235,108,225,101,214,115" href="rr.html" alt="Roraima" onmouseover="document.br.src='img/estados/rr.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="389,110,381,109,375,95,370,93,361,64,344,60,339,53,343,55,361,55,371,59,380,52,385,43,387,33,397,21,405,52,411,62,420,67,419,74,402,89,394,95" href="ap.html" alt="Amapá" onmouseover="document.br.src='img/estados/ap.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="307,261,417,265,424,250,437,238,433,227,433,215,446,205,450,197,446,190,446,185,475,159,480,149,480,141,492,118,480,110,470,108,457,109,454,112,452,108,459,94,456,89,447,85,438,83,423,80,412,87,400,97,394,115,387,124,386,119,387,114,378,112,373,98,368,96,359,69,339,62,335,51,320,54,320,62,296,64,268,76,271,103,281,120,294,120,311,132,277,211,291,244" href="pa.html" alt="Pará" onmouseover="document.br.src='img/estados/pa.png'" onmouseout="document.br.src='img/mapa.png'" />
+          <area shape="poly" coords="12,228,21,223,21,212,26,209,26,198,41,185,57,183,59,180,67,182,74,180,84,121,81,108,70,102,71,93,86,92,90,79,77,79,77,72,97,71,101,68,108,72,115,67,119,77,137,89,140,87,146,89,154,90,152,82,178,69,177,65,189,59,200,77,203,103,198,107,215,120,225,107,235,112,250,93,266,92,267,103,278,123,295,124,307,134,273,212,280,226,276,232,275,245,222,249,201,235,188,235,176,243,176,254,164,255,160,261,151,264,140,262,128,271,68,244,17,231" href="am.html" alt="Amazonas" onmouseover="document.br.src='img/estados/am.png'" onmouseout="document.br.src='img/mapa.png'" />
+        </map>
+      
+      <div id="clock">
+          <div id="clockh">Horário de Brasília:</div>
+          <ul id="clockul">
+              <li id="hours"></li>
+              <li id="point">:</li>
+              <li id="min"></li>
+              <li id="point">:</li>
+              <li id="sec"></li>
+          </ul>
+         <div id="data"></div>
+    </div>
+    
+  </div>
+
+</div>
+
+</body>
+</html>

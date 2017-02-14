@@ -1,0 +1,300 @@
+@charset "utf-8";
+/* CSS Document */
+
+img {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	background: url(../img/fundo.png);
+}
+
+body#rn {
+	background: url(../img/estados/rn/bg.jpg) no-repeat fixed;
+	background-size: 120%;
+}
+
+#topo {
+	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif; 
+	font-size: 1.2em; 
+	margin: -30px 0 0 0;
+	text-align: center;
+	color: #ccc;
+	position: absolute;
+	-webkit-animation: animated 10s;
+	-moz-animation: animated 10s;
+	-ms-animation: animated 10s;
+	-webkit-transform: rotate(345deg);
+	-moz-transform: rotate(345deg);
+	-ms-transform: rotate(345deg);
+	text-shadow: 3px 1px 10px #FF0;
+	opacity: 0.5; 
+}
+
+img.rn {
+	width: 400px;
+	height: 200px;
+	box-shadow: 0 0 20px #ccc;
+	padding: 0px;
+	margin: -30px 0 0 0;
+	position: absolute;
+	-webkit-animation: animated1 5s;
+	-moz-animation: animated1 5s;
+	-ms-animation: animated1 5s;
+	-webkit-transform: rotate(345deg);
+	-moz-transform: rotate(345deg);
+	-ms-transform: rotate(345deg);
+	opacity: 0.5; 
+	z-index: -1;
+}
+
+h1 {
+	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+	font-size: 45px;
+	text-align: center;
+	text-shadow: -4px 2px 10px #FFF;
+	color: #888;
+	border-bottom: double #703801;
+	padding: 30px;
+	background: url(../img/estados/rn/rn_brasao1.png) top left no-repeat;
+}
+
+h2 {
+	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	text-align: left;
+	text-shadow: -4px 2px 10px #FFF;
+	color: #555;
+	border-bottom: solid 1px #703801;
+	padding-left: 20px;
+}
+
+p {
+	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-shadow: 0 0 8px #000;
+	text-align: justify;
+	letter-spacing: 1px;
+	text-indent: 25px;
+	line-height: 20px;
+	color: #fff;
+}
+
+#container {
+	margin-bottom: 100px;
+}
+
+#mapa {
+	border-radius: 200px;
+	box-shadow: 0 0 100px #9fe8ec;
+	background: rgba(159,232,236,0.5);
+	margin: 110px auto 0 auto;
+	width: 695px;
+	padding: auto;
+}
+
+#mapa:hover {
+	-webkit-animation: sombras 1s ease infinite;
+	-moz-animation: sombras 1s ease infinite;
+	-ms-animation: sombras 1s ease infinite;
+}
+
+#conteudo {
+	width: 700px;
+	margin: 0 auto;
+	background: rgba(252,128,3,0.5);
+	border-radius: 20px;
+	box-shadow: -15px 20px 30px #703801;
+	padding: 0 25px 25px 25px;
+}
+
+#panorama {
+	overflow: auto;
+	overflow-y: hidden;
+	overflow-x: auto;
+	height: 300px; 
+}
+
+.legenda {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 13px;
+	color: #000EB7;
+	font-weight: bold;
+	text-align: center;
+}
+
+.pintura {
+	box-shadow: 0 0 10px #D56F09;
+	margin: 0 15%;
+}
+
+ul#rnul {
+	list-style-image: url(../img/li.png); 
+	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	text-shadow: 0 0 8px #000;
+	text-align: justify;
+	letter-spacing: 1px;
+	line-height: 20px;
+	color: #fff;
+}
+
+
+/*.............................RELÓGIO.............................*/
+#clock {
+	background: url(../img/relogio.png) no-repeat center;
+	position: absolute;
+	z-index: 1;
+	width: 220px;
+	height: 147px;
+	/*
+	-webkit-animation: clock_border 0.5s ease infinite; 
+	-moz-animation: clock_border 0.5s ease infinite; 
+	-ms-animation: clock_border 0.5s ease infinite; 
+	*/
+	box-shadow: 0 0 10px #0F0;
+	text-shadow: 0 0 10px #0F0;
+	top: 58%;
+	left: 26%;
+}
+
+#data { 
+	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif; 
+	font-size: 1em; 
+	padding: 10px;
+	text-align: center;
+	color: #ccc;
+}
+
+#clockh {
+	font-family: 'BebasNeueRegular', Arial, Helvetica, sans-serif; 
+	font-size: 1em; 
+	padding-top: 15px;
+	text-align: center;
+	color: #ccc;
+}
+
+ul#clockul {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	padding-top: 5px;
+}
+
+ul#clockul li { 
+	display: inline; 
+	font-size: 2.7em; 
+	font-family: Arial, Helvetica, sans-serif; 
+	text-shadow: 0 0 10px #0F0;
+	color: #ccc;
+}
+
+#point { 
+	text-shadow: 0 0 20px #0F0;
+	-webkit-animation: clock 1s ease infinite; 
+	-moz-animation: clock 1s ease infinite; 
+	-ms-animation: clock 1s ease infinite; 
+}
+/*.............................FIM RELÓGIO.............................*/
+
+
+/* Animations */
+@-webkit-keyframes clock {
+	0% {opacity: 1.0; text-shadow: 0 0 20px #0F0; }
+	50% {opacity: 0; text-shadow: none; }
+	100% {opacity: 1.0; text-shadow: 0 0 20px #0F0; }	
+}
+@-moz-keyframes clock {
+	0% {opacity: 1.0; text-shadow: 0 0 20px #0F0; }
+	50% {opacity: 0; text-shadow: none; }
+	100% {opacity: 1.0; text-shadow: 0 0 20px #0F0; }	
+}
+@-ms-keyframes clock {
+	0% {opacity: 1.0; text-shadow: 0 0 20px #0F0; }
+	50% {opacity: 0; text-shadow: none; }
+	100% {opacity: 1.0; text-shadow: 0 0 20px #0F0; }	
+}
+
+/*
+@-webkit-keyframes clock_border {
+	0% {opacity: 1; box-shadow: 0 0 10px #0F0; }
+	50% {opacity: 1; box-shadow: 0 0 5px #0F0; }
+	100% {opacity: 1; box-shadow: 0 0 10px #0F0; }	
+}
+@-moz-keyframes clock_border {
+	0% {opacity: 1; box-shadow: 0 0 10px #0F0; }
+	50% {opacity: 1; box-shadow: 0 0 5px #0F0; }
+	100% {opacity: 1; box-shadow: 0 0 10px #0F0; }	
+}
+@-ms-keyframes clock_border {
+	0% {opacity: 1; box-shadow: 0 0 10px #0F0; }
+	50% {opacity: 1; text-shadow: 0 0 5px #0F0; }
+	100% {opacity: 1; box-shadow: 0 0 10px #0F0; }	
+}
+*/
+
+@-webkit-keyframes sombras {
+	0% { border-radius: 200px; box-shadow: 0 0 120px #9fe8ec; }
+	50% { border-radius: 220px; box-shadow: 0 0 75px #9fe8ec; }
+	75% { border-radius: 190px; box-shadow: 0 0 140px #9fe8ec; }
+	100% { border-radius: 200px; box-shadow: 0 0 120px #9fe8ec; }
+}
+@-moz-keyframes sombras {
+	0% { border-radius: 200px; box-shadow: 0 0 120px #9fe8ec; }
+	50% { border-radius: 220px; box-shadow: 0 0 75px #9fe8ec; }
+	75% { border-radius: 190px; box-shadow: 0 0 140px #9fe8ec; }
+	100% { border-radius: 200px; box-shadow: 0 0 120px #9fe8ec; }
+}
+@-ms-keyframes sombras {
+	0% { border-radius: 200px; box-shadow: 0 0 120px #9fe8ec; }
+	50% { border-radius: 220px; box-shadow: 0 0 75px #9fe8ec; }
+	75% { border-radius: 190px; box-shadow: 0 0 140px #9fe8ec; }
+	100% { border-radius: 200px; box-shadow: 0 0 120px #9fe8ec; }
+}
+
+@-webkit-keyframes animated {
+	0% { -webkit-transform: rotate(0deg); opacity: 0; }
+	15% { opacity: 1; }
+	50% { -webkit-text-shadow: -6px -1px 10px #FF0; }
+	100%{ -webkit-transform: rotate(345deg); opacity: 0.5; }
+}
+@-moz-keyframes animated {
+	0% { -moz-transform: rotate(0deg); opacity: 0; }
+	15% { opacity: 1; }
+	50% { -moz-text-shadow: -6px -1px 10px #FF0; }
+	100%{ -moz-transform: rotate(345deg); opacity: 0.5; }
+}
+@-ms-keyframes animated {
+	0% { -ms-transform: rotate(0deg); opacity: 0; }
+	15% { opacity: 1; }
+	50% { -ms-text-shadow: -6px -1px 10px #FF0; }
+	100%{ -ms-transform: rotate(345deg); opacity: 0.5; }
+}
+
+/* BANDEIRA - RN */
+@-webkit-keyframes animated1 {
+	0% { -webkit-transform: rotate(200deg); opacity: 0; margin: -300px; }
+	15% { opacity: 1; }
+	50% { box-shadow: 0 0 20px #ccc; }
+	100%{ -webkit-transform: rotate(345deg); opacity: 0.5; margin: -30px 0 0 0; }
+}
+@-moz-keyframes animated1 {
+	0% { -moz-transform: rotate(0deg); opacity: 0; }
+	15% { opacity: 1; }
+	50% { -moz-text-shadow: -6px -1px 10px #FF0; }
+	100%{ -moz-transform: rotate(345deg); opacity: 0.5; }
+}
+@-ms-keyframes animated1 {
+	0% { -ms-transform: rotate(0deg); opacity: 0; }
+	15% { opacity: 1; }
+	50% { -ms-text-shadow: -6px -1px 10px #FF0; }
+	100%{ -ms-transform: rotate(345deg); opacity: 0.5; }
+}
+
+/*
+@-webkit-keyframes tofall {
+	0% { top: 0; left: 0; }
+	100% { top: 3%; left: 3%; }
+}
+*/
